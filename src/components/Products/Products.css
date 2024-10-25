@@ -1,0 +1,145 @@
+.products {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.products ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.products li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.products img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.products div {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.products strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.products .price {
+  font-size: 1.1rem;
+  color: #e63946;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.products button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.products button:hover {
+  background-color: #0056b3;
+}
+
+.products button.red {
+  background-color: #dc3545;
+}
+
+.products button.red:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .products ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+.products button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 1.5rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative; /* Añadido para hacer que el botón sea relativo a sus hijos */
+  display: flex;
+  justify-content: center; /* Centramos contenido dentro del botón */
+  align-items: center;      /* Centramos verticalmente el contenido */
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.products button .cart-icon {
+  display: inline-block;
+  position: absolute; /* Usamos posición absoluta para mantenerlo centrado */
+  left: 50%; /* Centramos horizontalmente */
+  transform: translateX(-50%); /* Ajustamos la posición */
+  transition: opacity 0.3s;
+}
+
+.products button .add-text {
+  position: absolute; /* El texto también debe estar en posición absoluta */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  left: 50%; /* Centramos el texto */
+  transform: translateX(-50%); /* Alineamos el centro del texto con el centro del botón */
+}
+
+/* Cuando se hace hover, el icono se oculta y el texto aparece */
+.products button:hover .cart-icon {
+  opacity: 0;
+}
+
+.products button:hover .add-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.products button.red {
+  background-color: #dc3545;
+}
+
+.products button.red:hover {
+  background-color: #c82333;
+}
